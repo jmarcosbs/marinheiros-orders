@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Zerar estilos padrões */
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+}
+
+@layer utilities {
+  .w-100vh {
+    width: 100vh; /* Define a largura como 100vh */
+  }
+}
