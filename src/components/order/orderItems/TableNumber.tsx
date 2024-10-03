@@ -13,6 +13,7 @@ export default function TableNumber() {
             id="outlined-basic"
             label="Mesa"
             variant="outlined"
+            type="number"
             sx={{ width: '100px' }}
         />
         <ToggleButton
