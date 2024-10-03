@@ -1,14 +1,14 @@
 import TableNumber from '@/components/order/orderItems/TableNumber';
-import Items from '@/components/order/orderItems/Items'
+import ShowItemsButton from '@/components/order/orderItems/ShowItemsButton'
 
 export default function Home() {
   return (
-      <div className="flex items-center w-screen justify-center">
+      <div className='flex items-center w-screen justify-center'>
         
           <main>
-            <div className='block w-[100%] border p-4'>
-              <TableNumber />
-              <Items />
+            <div className='grid grid-cols-1 gap-4 w-[100%] min-w-[400px] border p-4'>
+              <TableNumber/>
+              <ShowItemsButton />
             </div>
           </main>
 
