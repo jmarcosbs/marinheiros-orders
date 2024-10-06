@@ -2,48 +2,61 @@ import React from "react";
 import menuItems from "../../../app/data/menuItems.json";
 import { ListItemText, ListItemButton, ListItemIcon, List, Collapse } from "@mui/material";
 import { useState } from "react";
-import { ExpandMore, ExpandLess, AddBoxTwoTone, StarBorder } from '@mui/icons-material'; // {{ edit_2 }}
+import { ExpandMore, ExpandLess, AddBoxTwoTone } from '@mui/icons-material'; // {{ edit_2 }}
 
 export default function Items() {
 
-  const [openIndex, setOpenIndex] = useState(null); // Armazena o índice do item aberto
+  const [openIndex, setOpenIndex] = useState<number | null>(null); // Ensure openIndex can be number or null
 
-  const handleClick = (index) => {
+  const handleClick = (index : number | null) => {
     setOpenIndex(openIndex === index ? null : index); // Fecha se já estiver aberto
   };
 
   return (
-    <div className="grid grid-cols-2 gap-4">
+    
+    <div className="grid grid-cols-2 gap-2">
 
       {menuItems["menu"].map((item, index) => (
 
-        <List key={item.category} >
-          <ListItemButton  sx={{backgroundColor: '#5c422799', color: '#fff',  '&:hover': {backgroundColor: '#5c4227'}}} onClick={() => handleClick(index)}>
-            <ListItemText primary={item.category} />
-            {openIndex === index ? <ExpandLess /> : <ExpandMore />}
-          </ListItemButton>
+        <div className={openIndex === index ? "col-span-2" : "col-span-1"} key={item.name} id={`item-${index}`}>
+          <List key={item.category} >
+
+            <ListItemButton 
+              sx={{ backgroundColor: '#5c422799', color: '#fff',  '&:hover': {backgroundColor: '#5c4227'}}} 
+              onClick={() => {
+                handleClick(index);
+                document.getElementById(`item-${index}`)?.scrollIntoView({ behavior: 'smooth' }); // TA BUGANDO
+              }}
+            >
+              <ListItemText primary={item.category} />
+              {openIndex === index ? <ExpandLess /> : <ExpandMore />}
+            </ListItemButton>
+            
 
 
-          {item.items.map(item => (
+            {item.items.map(item => (
 
-                <Collapse key={item.name} in={openIndex === index? true : false} timeout="auto" unmountOnExit>
-                <List component="div" disablePadding>
-                  <ListItemButton sx={{ pl: 4 }}>
-                    <ListItemIcon>
-                    <AddBoxTwoTone />
-                    </ListItemIcon>
-                    <ListItemText primary={item.name} />
-                  </ListItemButton>
-                </List>
-                </Collapse>
-
-
-          ))}
+                  
+                  <Collapse key={item.name} in={openIndex === index? true : false} timeout="auto" unmountOnExit>
+                  <List component="div" disablePadding>
+                    <ListItemButton>
+                      <ListItemIcon>
+                      <AddBoxTwoTone/>
+                      </ListItemIcon>
+                      <ListItemText primary={item.name} onClick={() => handleClick(index)} />
+                    </ListItemButton>
+                  </List>
+                  </Collapse>
 
 
-        
 
-       </List>
+            ))}
+            
+
+          
+
+          </List>
+        </div>
 
       ))}
 
