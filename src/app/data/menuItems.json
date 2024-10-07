@@ -1,7 +1,7 @@
 {
     "menu": [
       {
-        "category": "Entradas",
+        "category": "🥟 Entradas",
         "items": [
           { "name": "Camarao a Milanesa" },
           { "name": "Camarao ao Alho e Oleo (sem casca)" },
@@ -15,7 +15,7 @@
         ]
       },
       {
-        "category": "Camaroes",
+        "category": "🦐 Camaroes",
         "items": [
           {
             "name": "Camarao Catupiry",
@@ -44,7 +44,7 @@
         ]
       },
       {
-        "category": "Peixes",
+        "category": "🐟 Peixes",
         "items": [
           {
             "name": "File de Peixe a Milanesa",
@@ -61,7 +61,7 @@
         ]
       },
       {
-        "category": "Carnes",
+        "category": "🥩 Carnes",
         "items": [
           {
             "name": "Picanha",
@@ -82,7 +82,7 @@
         ]
       },
       {
-        "category": "Acompanhamentos",
+        "category": "🍚 Acompanhamentos",
         "items": [
           { "name": "Arroz" },
           { "name": "Arroz a grega" },
@@ -93,7 +93,7 @@
         ]
       },
       {
-        "category": "Sobremesas",
+        "category": "🧁 Sobremesas",
         "items": [
           { "name": "Sorvete" },
           { "name": "Pudim" },
@@ -101,7 +101,7 @@
         ]
       },
       {
-        "category": "Bebidas",
+        "category": "🍹 Bebidas",
         "items": [
           { "name": "Refrigerante" },
           { "name": "Suco Natural" },
