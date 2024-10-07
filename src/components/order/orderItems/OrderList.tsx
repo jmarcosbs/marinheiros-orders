@@ -1,7 +1,7 @@
 import React from 'react'
-import { List, ListItem, IconButton, ListItemText } from '@mui/material'; // Add this import
-import { Comment, DeleteForever } from '@mui/icons-material'; // {{ edit_1 }}
+import { List, ListItem, ListItemText } from '@mui/material'; // Add this import
 import Counter from './Counter';
+import HandleOrderItem from './handleOrderItem'; // Updated import to match the casing
 
 function OrderList() {
 
@@ -12,25 +12,22 @@ function OrderList() {
             {lista.map((value) => (
             <ListItem
                 key={value}
-                sx={{backgroundColor: '#5c422710', marginBottom : '20px', borderRadius : '10px', boxShadow: '3px 3px 5px 0px #5c422730', padding : '10px' } }
+                sx={{backgroundColor: '#5c422710', marginBottom : '10px', borderRadius : '10px', boxShadow: '3px 3px 5px 0px #5c422730', padding : '7px' } }
                 disableGutters
-                secondaryAction={
-                    <>
-                        <IconButton aria-label="comment">
-                            <Comment sx={{fontSize : '30px'}}/>
-                        </IconButton>
-                        <IconButton aria-label="edit">
-                            <DeleteForever sx={{color: '#FF6961', fontSize : '30px'}}/>
-                        </IconButton>
-                    </>
-                }
             >
-                <div className='w-[50px] h-[100px]'>
-                    <Counter containerWidth={'30px'}/>  
+                <div className='flex justify-between w-full'>
+                    <div className=''>
+                        <HandleOrderItem />
+                    </div>
+
+                    <div className='flex pl-5 items-center w-full'>
+                    <ListItemText primary={<span className="text-[20px] text-[#5c4227]">{value}</span>} />    
+                    </div>    
+
+                    <div className='flex justify-end'>
+                        <Counter containerWidth={'30px'}/>  
+                    </div>
                 </div>
-                <div className='flex pl-5 items-center'>
-                <ListItemText primary={<span className="text-[20px] text-[#5c4227]">{value}</span>} />    
-                </div>    
             </ListItem>
             ))}
         </List>

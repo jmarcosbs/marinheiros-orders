@@ -22,7 +22,7 @@ export default function Items() {
           <List key={item.category} >
 
             <ListItemButton 
-              sx={{ backgroundColor: '#5c422799', color: '#fff',  '&:hover': {backgroundColor: '#5c4227'}}} 
+              sx={{ backgroundColor: '#7d654b', color: '#fff',  '&:hover': {backgroundColor: '#5c4227'}}} 
               onClick={() => {
                 handleClick(index);
                 document.getElementById(`item-${index}`)?.scrollIntoView({ behavior: 'smooth' }); // TA BUGANDO
