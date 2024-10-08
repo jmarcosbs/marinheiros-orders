@@ -14,7 +14,7 @@ export default function Items() {
 
   return (
     
-    <div className="grid grid-cols-2 gap-2">
+    <div className="grid grid-cols-2 gap-1">
 
       {menuItems["menu"].map((item, index) => (
 
@@ -22,7 +22,7 @@ export default function Items() {
           <List key={item.category} >
 
             <ListItemButton 
-              sx={{ backgroundColor: '#7d654b', color: '#fff',  '&:hover': {backgroundColor: '#5c4227'}}} 
+              sx={{ backgroundColor: '#7d654b', color: '#fff', borderRadius: '5px', boxShadow: '3px 3px 5px 0px #5c422730',  '&:hover': {backgroundColor: '#5c4227'}}} 
               onClick={() => {
                 handleClick(index);
                 document.getElementById(`item-${index}`)?.scrollIntoView({ behavior: 'smooth' }); // TA BUGANDO

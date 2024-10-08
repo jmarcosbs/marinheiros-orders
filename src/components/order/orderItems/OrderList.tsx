@@ -1,18 +1,18 @@
 import React from 'react'
 import { List, ListItem, ListItemText } from '@mui/material'; // Add this import
 import Counter from './Counter';
-import HandleOrderItem from './handleOrderItem'; // Updated import to match the casing
+import HandleOrderItem from './HandleOrderItem'; // Updated import to match the casing
 
 function OrderList() {
 
     const lista = ["Pedido 1", "Anchova ao molho de alcaparras", "Pedido 3",]
 
     return (
-        <List sx={{ width: '100%', maxWidth: 400, bgcolor: 'background.paper' }}>
+        <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
             {lista.map((value) => (
             <ListItem
                 key={value}
-                sx={{backgroundColor: '#5c422710', marginBottom : '10px', borderRadius : '10px', boxShadow: '3px 3px 5px 0px #5c422730', padding : '7px' } }
+                sx={{backgroundColor: '#5c422710', marginBottom : '10px', borderRadius : '10px', width: '100%', boxShadow: '3px 3px 5px 0px #5c422730', padding : '7px' } }
                 disableGutters
             >
                 <div className='flex justify-between w-full'>
