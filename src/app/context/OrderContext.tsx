@@ -1,18 +1,66 @@
 'use client'
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
+
+export type Dish = {
+  id : number
+  name : string | null;
+  departiment : string | null;
+  amount : number | null;
+  note : string | null
+};
 
 interface OrderContextProps {
-  tableNumber: string;
-  setTableNumber: (tableNumber: string) => void;
+  tableNumber : number;
+  setTableNumber : (tableNumber : number) => void;
+
+  isOutside : boolean;
+  setIsOutside : (isOutside : boolean) => void;
+
+  dateTime : Date | null;
+  setDateTime : (dateTime : Date | null) => void;
+
+  dishes : Dish[];
+  setDishes : (dishes : Dish[]) => void;
+
+  note : string;
+  setNote : (note : string) => void;
+
+  getOrderAsJson : () => string;
 }
 
 const OrderContext = createContext<OrderContextProps | undefined>(undefined);
 
-export const OrderProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [tableNumber, setTableNumber] = useState<string | "">(""); // Número da mesa inicial
+export const OrderProvider : React.FC<{ children : React.ReactNode }> = ({ children }) => {
+  const [tableNumber, setTableNumber] = useState<number>(0);
+  const [dateTime, setDateTime] = useState<Date | null>(null);
+  const [dishes, setDishes] = useState<Dish[]>([]);
+  const [isOutside, setIsOutside] = useState<boolean>(false);
+  const [note, setNote] = useState<string | null>(null);
+
+  // Monitora alterações no objeto completo
+  useEffect(() => {
+    const order = {
+      tableNumber,
+      isOutside,
+      dateTime : dateTime ? dateTime.toISOString()  : null,
+      dishes,
+      note
+    };
+    console.log("Order updated:", order);
+  }, [tableNumber, isOutside, dateTime, dishes, note]);
+
+  // Função para preparar o pedido em formato JSON
+  const getOrderAsJson = () => {
+    const order = {
+      tableNumber,
+      dateTime: dateTime ? dateTime.toISOString() : null,
+      dishes,
+    };
+    return JSON.stringify(order);
+  };
 
   return (
-    <OrderContext.Provider value={{ tableNumber, setTableNumber }}>
+    <OrderContext.Provider value={{ tableNumber, setTableNumber, isOutside, setIsOutside, dateTime, setDateTime, dishes, setDishes, getOrderAsJson, note, setNote }}>
       {children}
     </OrderContext.Provider>
   );

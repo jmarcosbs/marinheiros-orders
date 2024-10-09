@@ -1,21 +1,17 @@
 'use client'
 import '@/app/globals.css';
-import { useEffect, useState } from 'react';
 import { TextField, ToggleButton } from "@mui/material";
-import { useOrderContext } from '../../../app/context/OrderContext';
+import { useOrderContext } from '../context/OrderContext';
 
 export default function TableNumber() {
     const { tableNumber, setTableNumber } = useOrderContext();
-    const [isOut, setIsOut] = useState<string>("")
+    const { isOutside, setIsOutside } = useOrderContext();
 
     const handleTableNumberChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const newTableNumber = event.target.value
-        setTableNumber(isOut + newTableNumber)
+        const newTableNumber = parseInt(event.target.value)
+        setTableNumber(newTableNumber)
     };
 
-    useEffect(() => {
-        isOut? setIsOut('R') : setIsOut('')
-    }, [isOut]); 
 
     console.log(tableNumber);
 
@@ -31,8 +27,8 @@ export default function TableNumber() {
             />
             <ToggleButton
                 value="check"
-                selected={isOut}
-                onChange={() => setIsOut(!isOut)}
+                selected={isOutside}
+                onChange={() => setIsOutside(!isOutside)}
                 sx={{ height: "56px" }}
             >
                 Rua

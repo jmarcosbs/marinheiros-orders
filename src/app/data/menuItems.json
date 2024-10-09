@@ -1,115 +1,169 @@
 {
-    "menu": [
-      {
-        "category": "🥟 Entradas",
-        "items": [
-          { "name": "Camarao a Milanesa" },
-          { "name": "Camarao ao Alho e Oleo (sem casca)" },
-          { "name": "Lula a Milanesa" },
-          { "name": "Torpedo de Siri (2 unidades)" },
-          { "name": "Isca de Frango" },
-          { "name": "Isca de Peixe" },
-          { "name": "Peixe frito em postas" },
-          { "name": "Aipim Frito" },
-          { "name": "Batata Frita" }
-        ]
-      },
-      {
-        "category": "🦐 Camaroes",
-        "items": [
-          {
-            "name": "Camarao Catupiry",
-            "description": "Camarao refogado com cebola, manteiga, molho branco e catupiry. Acompanhamentos: Arroz, fritas e salada."
-          },
-          {
-            "name": "Camarao a Grega",
-            "description": "Camarao a milanesa gratinado com queijo. Acompanhamentos: Arroz a grega, fritas e salada."
-          },
-          {
-            "name": "Camarao a Milanesa",
-            "description": "Camarao empanado e frito. Acompanhamentos: Arroz, fritas e salada."
-          },
-          {
-            "name": "Camarao Internacional",
-            "description": "Camarao refogado com creme de leite, arroz e ervilha. Gratinado com queijo e batata palha."
-          },
-          {
-            "name": "Camarao ao Alho e Oleo",
-            "description": "Camarao ao alho e oleo. Acompanhamentos: Arroz, fritas e salada."
-          },
-          {
-            "name": "Camarao ao Molho",
-            "description": "Camarao ao molho branco ou molho de tomate. Acompanhamentos: Arroz, fritas e salada."
-          }
-        ]
-      },
-      {
-        "category": "🐟 Peixes",
-        "items": [
-          {
-            "name": "File de Peixe a Milanesa",
-            "description": "File de peixe empanado. Acompanhamentos: Arroz, fritas e salada."
-          },
-          {
-            "name": "File de Peixe ao Molho",
-            "description": "File de peixe ao molho branco ou molho de tomate. Acompanhamentos: Arroz, fritas e salada."
-          },
-          {
-            "name": "File de Peixe Grelhado",
-            "description": "File de peixe grelhado. Acompanhamentos: Arroz, fritas e salada."
-          }
-        ]
-      },
-      {
-        "category": "🥩 Carnes",
-        "items": [
-          {
-            "name": "Picanha",
-            "description": "Picanha grelhada. Acompanhamentos: Arroz, fritas, farofa e salada."
-          },
-          {
-            "name": "Contra File",
-            "description": "Contra file grelhado. Acompanhamentos: Arroz, fritas e salada."
-          },
-          {
-            "name": "File a Parmegiana",
-            "description": "File de carne empanado, ao molho de tomate e gratinado com queijo. Acompanhamentos: Arroz e fritas."
-          },
-          {
-            "name": "Frango a Parmegiana",
-            "description": "File de frango empanado, ao molho de tomate e gratinado com queijo. Acompanhamentos: Arroz e fritas."
-          }
-        ]
-      },
-      {
-        "category": "🍚 Acompanhamentos",
-        "items": [
-          { "name": "Arroz" },
-          { "name": "Arroz a grega" },
-          { "name": "Batata Frita" },
-          { "name": "Batata Palha" },
-          { "name": "Farofa" },
-          { "name": "Salada" }
-        ]
-      },
-      {
-        "category": "🧁 Sobremesas",
-        "items": [
-          { "name": "Sorvete" },
-          { "name": "Pudim" },
-          { "name": "Mousse de Chocolate" }
-        ]
-      },
-      {
-        "category": "🍹 Bebidas",
-        "items": [
-          { "name": "Refrigerante" },
-          { "name": "Suco Natural" },
-          { "name": "Agua com Gas" },
-          { "name": "Agua sem Gas" },
-          { "name": "Cerveja" }
-        ]
-      }
-    ]
-  }
-  
+  "menu": [
+    {
+      "category": "🥟 Entradas",
+      "items": [
+        { "id": 1, "departiment": "Cozinha",
+        "name": "Camarao a Milanesa" },
+        { "id": 2, "departiment": "Cozinha",
+        "name": "Camarao ao Alho e Oleo (sem casca)" },
+        { "id": 3, "departiment": "Cozinha",
+        "name": "Lula a Milanesa" },
+        { "id": 4, "departiment": "Cozinha",
+        "name": "Torpedo de Siri (2 unidades)" },
+        { "id": 5, "departiment": "Cozinha",
+        "name": "Isca de Frango" },
+        { "id": 6, "departiment": "Cozinha",
+        "name": "Isca de Peixe" },
+        { "id": 7, "departiment": "Cozinha",
+        "name": "Peixe frito em postas" },
+        { "id": 8, "departiment": "Cozinha",
+        "name": "Aipim Frito" },
+        { "id": 9, "departiment": "Cozinha",
+        "name": "Batata Frita" }
+      ]
+    },
+    {
+      "category": "🦐 Camaroes",
+      "departiment": "Cozinha",
+      "items": [
+        {
+          "id": 10,
+          "departiment": "Cozinha",
+          "name": "Camarao Catupiry",
+          "description": "Camarao refogado com cebola, manteiga, molho branco e catupiry. Acompanhamentos: Arroz, fritas e salada."
+        },
+        {
+          "id": 11,
+          "departiment": "Cozinha",
+          "name": "Camarao a Grega",
+          "description": "Camarao a milanesa gratinado com queijo. Acompanhamentos: Arroz a grega, fritas e salada."
+        },
+        {
+          "id": 12,
+          "departiment": "Cozinha",
+          "name": "Camarao a Milanesa",
+          "description": "Camarao empanado e frito. Acompanhamentos: Arroz, fritas e salada."
+        },
+        {
+          "id": 13,
+          "departiment": "Cozinha",
+          "name": "Camarao Internacional",
+          "description": "Camarao refogado com creme de leite, arroz e ervilha. Gratinado com queijo e batata palha."
+        },
+        {
+          "id": 14,
+          "departiment": "Cozinha",
+          "name": "Camarao ao Alho e Oleo",
+          "description": "Camarao ao alho e oleo. Acompanhamentos: Arroz, fritas e salada."
+        },
+        {
+          "id": 15,
+          "departiment": "Cozinha",
+          "name": "Camarao ao Molho",
+          "description": "Camarao ao molho branco ou molho de tomate. Acompanhamentos: Arroz, fritas e salada."
+        }
+      ]
+    },
+    {
+      "category": "🐟 Peixes",
+      "departiment": "Cozinha",
+      "items": [
+        {
+          "id": 16,
+          "departiment": "Cozinha",
+          "name": "File de Peixe a Milanesa",
+          "description": "File de peixe empanado. Acompanhamentos: Arroz, fritas e salada."
+        },
+        {
+          "id": 17,
+          "departiment": "Cozinha",
+          "name": "File de Peixe ao Molho",
+          "description": "File de peixe ao molho branco ou molho de tomate. Acompanhamentos: Arroz, fritas e salada."
+        },
+        {
+          "id": 18,
+          "departiment": "Cozinha",
+          "name": "File de Peixe Grelhado",
+          "description": "File de peixe grelhado. Acompanhamentos: Arroz, fritas e salada."
+        }
+      ]
+    },
+    {
+      "category": "🥩 Carnes",
+      "departiment": "Cozinha",
+      "items": [
+        {
+          "id": 19,
+          "departiment": "Cozinha",
+          "name": "Picanha",
+          "description": "Picanha grelhada. Acompanhamentos: Arroz, fritas, farofa e salada."
+        },
+        {
+          "id": 20,
+          "departiment": "Cozinha",
+          "name": "Contra File",
+          "description": "Contra file grelhado. Acompanhamentos: Arroz, fritas e salada."
+        },
+        {
+          "id": 21,
+          "departiment": "Cozinha",
+          "name": "File a Parmegiana",
+          "description": "File de carne empanado, ao molho de tomate e gratinado com queijo. Acompanhamentos: Arroz e fritas."
+        },
+        {
+          "id": 22,
+          "departiment": "Cozinha",
+          "name": "Frango a Parmegiana",
+          "description": "File de frango empanado, ao molho de tomate e gratinado com queijo. Acompanhamentos: Arroz e fritas."
+        }
+      ]
+    },
+    {
+      "category": "🍚 Acompanhamentos",
+      "departiment": "Cozinha",
+      "items": [
+        { "id": 23, "departiment": "Cozinha",
+        "name": "Arroz" },
+        { "id": 24, "departiment": "Cozinha",
+        "name": "Arroz a grega" },
+        { "id": 25, "departiment": "Cozinha",
+        "name": "Batata Frita" },
+        { "id": 26, "departiment": "Cozinha",
+        "name": "Batata Palha" },
+        { "id": 27, "departiment": "Cozinha",
+        "name": "Farofa" },
+        { "id": 28, "departiment": "Cozinha",
+        "name": "Salada" }
+      ]
+    },
+    {
+      "category": "🧁 Sobremesas",
+      "departiment": "Copa",
+      "items": [
+        { "id": 29, "departiment": "Cozinha",
+        "name": "Sorvete" },
+        { "id": 30, "departiment": "Cozinha",
+        "name": "Pudim" },
+        { "id": 31, "departiment": "Cozinha",
+        "name": "Mousse de Chocolate" }
+      ]
+    },
+    {
+      "category": "🍹 Bebidas",
+      "departiment": "Copa",
+      "items": [
+        { "id": 32, "departiment": "Cozinha",
+        "name": "Refrigerante" },
+        { "id": 33, "departiment": "Cozinha",
+        "name": "Suco Natural" },
+        { "id": 34, "departiment": "Cozinha",
+        "name": "Agua com Gas" },
+        { "id": 35, "departiment": "Cozinha",
+        "name": "Agua sem Gas" },
+        { "id": 36, "departiment": "Cozinha",
+        "name": "Cerveja" }
+      ]
+    }
+  ]
+}

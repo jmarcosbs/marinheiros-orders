@@ -1,6 +1,6 @@
-import TableNumber from '@/components/order/orderItems/TableNumber';
-import ShowItemsButton from '@/components/order/orderItems/ShowItemsButton'
-import OrderList from '@/components/order/orderItems/OrderList'
+import TableNumber from '@/app/components/TableNumber';
+import ShowItemsButton from '@/app/components/ShowItemsButton'
+import OrderList from '@/app/components/OrderList'
 import { OrderProvider } from '../app/context/OrderContext';
 
 export default function Home() {
