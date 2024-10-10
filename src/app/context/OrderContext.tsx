@@ -1,5 +1,5 @@
 'use client'
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, Dispatch, SetStateAction } from 'react';
 
 export type Dish = {
   id : number
@@ -20,7 +20,7 @@ interface OrderContextProps {
   setDateTime : (dateTime : Date | null) => void;
 
   dishes : Dish[];
-  setDishes : (dishes : Dish[]) => void;
+  setDishes: Dispatch<SetStateAction<Dish[]>>; // Aqui você garante que setDishes aceita tanto um array quanto uma função
 
   note : string;
   setNote : (note : string) => void;
@@ -35,7 +35,7 @@ export const OrderProvider : React.FC<{ children : React.ReactNode }> = ({ child
   const [dateTime, setDateTime] = useState<Date | null>(null);
   const [dishes, setDishes] = useState<Dish[]>([]);
   const [isOutside, setIsOutside] = useState<boolean>(false);
-  const [note, setNote] = useState<string | null>(null);
+  const [note, setNote] = useState<string | ''>('');
 
   // Monitora alterações no objeto completo
   useEffect(() => {
@@ -44,7 +44,7 @@ export const OrderProvider : React.FC<{ children : React.ReactNode }> = ({ child
       isOutside,
       dateTime : dateTime ? dateTime.toISOString()  : null,
       dishes,
-      note
+      note,
     };
     console.log("Order updated:", order);
   }, [tableNumber, isOutside, dateTime, dishes, note]);
@@ -55,6 +55,7 @@ export const OrderProvider : React.FC<{ children : React.ReactNode }> = ({ child
       tableNumber,
       dateTime: dateTime ? dateTime.toISOString() : null,
       dishes,
+      note
     };
     return JSON.stringify(order);
   };
