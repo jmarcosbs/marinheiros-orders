@@ -1,6 +1,7 @@
 import TableNumber from '@/app/components/TableNumber';
 import ShowItemsButton from '@/app/components/ShowItemsButton'
 import OrderList from '@/app/components/OrderList'
+import Comment from '@/app/components/Comment'
 import { OrderProvider } from '../app/context/OrderContext';
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
                 <TableNumber/>
                 <ShowItemsButton />
                 <OrderList />
+                <Comment/>
               </OrderProvider>
             </div>
           </main>
