@@ -42,7 +42,7 @@ export default function Counter({ containerWidth, dishIndex, dishDepartiment }: 
     };
 
     return (
-        <div className='flex flex-row items-center'>
+        <div className='flex flex-row items-center ml-1 mr-1'>
             <ButtonGroup orientation="vertical" sx={{ width: containerWidth }}>
                 <Button
                     onClick={incrementCount}
