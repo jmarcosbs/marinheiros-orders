@@ -3,14 +3,15 @@ import menuItems from "../data/menuItems.json";
 import { ListItemText, ListItemButton, ListItemIcon, List, Collapse } from "@mui/material";
 import { ExpandMore, ExpandLess, AddBoxTwoTone } from '@mui/icons-material';
 import { useOrderContext, Dish } from '../context/OrderContext';
+import CustomItem from '../components/CustomItem'
 
 export default function Items() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const { dishes, setDishes } = useOrderContext();
+  const { setDishes } = useOrderContext();
 
   interface MenuItem {
     category: string;
-    departiment: string;
+    departiment?: string;
     items: Item[];
   }
 
@@ -33,12 +34,13 @@ export default function Items() {
       note: null // Inicializa note como null
     };
 
-    setDishes((prevDishes) => {
+    setDishes((prevDishes: Dish[]) => { // Specify the type of prevDishes
       const updatedDishes = [...prevDishes, newDish];
-      console.log("Updated dishes:", dishes); // Log para rastreamento
-      return updatedDishes; // Retorna o novo array atualizado
+      console.log("Updated dishes:", updatedDishes); // Log para rastreamento
+      return updatedDishes; // Return the updated array
     });
   };
+
 
   return (
     <div className="grid grid-cols-2 gap-1">
@@ -59,7 +61,7 @@ export default function Items() {
             {menuItem.items.map((subItem: Item) => (
               <Collapse key={subItem.id} in={openIndex === index} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
-                  <ListItemButton onClick={() => handleClickSubItem(subItem, menuItem.departiment)}>
+                  <ListItemButton onClick={() => handleClickSubItem(subItem, menuItem.departiment!)}>
                     <ListItemIcon>
                       <AddBoxTwoTone />
                     </ListItemIcon>
@@ -71,6 +73,7 @@ export default function Items() {
           </List>
         </div>
       ))}
+      <CustomItem/>
     </div>
   );
 }

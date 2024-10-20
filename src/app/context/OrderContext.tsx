@@ -1,67 +1,71 @@
 'use client'
-import React, { createContext, useContext, useState, useEffect, Dispatch, SetStateAction } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
 export type Dish = {
-  id : number
-  name : string | null;
-  departiment : string | null;
-  amount : number | null;
-  note : string | null
+  id: number;
+  name: string | null;
+  departiment: string | null;
+  amount: number | null;
+  note: string | null;
 };
 
 interface OrderContextProps {
-  tableNumber : number;
-  setTableNumber : (tableNumber : number) => void;
-
-  isOutside : boolean;
-  setIsOutside : (isOutside : boolean) => void;
-
-  dateTime : Date | null;
-  setDateTime : (dateTime : Date | null) => void;
-
-  dishes : Dish[];
-  setDishes: Dispatch<SetStateAction<Dish[]>>; // Aqui você garante que setDishes aceita tanto um array quanto uma função
-
-  note : string;
-  setNote : (note : string) => void;
-
-  getOrderAsJson : () => string;
+  tableNumber: number;
+  setTableNumber: (tableNumber: number) => void;
+  waiter: string;
+  setWaiter: (note: string) => void;
+  isOutside: boolean;
+  setIsOutside: (isOutside: boolean) => void;
+  dateTime: Date | null;
+  setDateTime: (dateTime: Date | null) => void;
+  dishes: Dish[];
+  setDishes: React.Dispatch<React.SetStateAction<Dish[]>>; // Tipo correto para setDishes
+  note: string;
+  setNote: (note: string) => void;
+  getOrderAsJson: () => string;
 }
 
 const OrderContext = createContext<OrderContextProps | undefined>(undefined);
 
-export const OrderProvider : React.FC<{ children : React.ReactNode }> = ({ children }) => {
+export const OrderProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [tableNumber, setTableNumber] = useState<number>(0);
+  const [waiter, setWaiter] = useState<string>('');
   const [dateTime, setDateTime] = useState<Date | null>(null);
-  const [dishes, setDishes] = useState<Dish[]>([]);
+  const [dishes, setDishes] = useState<Dish[]>(() => {
+    // Recupera os dishes do localStorage ao inicializar, se estiver no cliente
+    if (typeof window !== 'undefined') {
+      const storedDishes = localStorage.getItem('dishes');
+      if (storedDishes) {
+        return JSON.parse(storedDishes)
+      } else {
+        return []
+      }
+
+    } 
+  });
   const [isOutside, setIsOutside] = useState<boolean>(false);
-  const [note, setNote] = useState<string | ''>('');
+  const [note, setNote] = useState<string>('');
 
-  // Monitora alterações no objeto completo
   useEffect(() => {
-    const order = {
-      tableNumber,
-      isOutside,
-      dateTime : dateTime ? dateTime.toISOString()  : null,
-      dishes,
-      note,
-    };
-    console.log("Order updated:", order);
-  }, [tableNumber, isOutside, dateTime, dishes, note]);
+    // Armazena os dishes no localStorage sempre que eles mudam, se estiver no cliente
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('dishes', JSON.stringify(dishes));
+    }
+  }, [dishes]);
 
-  // Função para preparar o pedido em formato JSON
   const getOrderAsJson = () => {
     const order = {
       tableNumber,
+      waiter,
       dateTime: dateTime ? dateTime.toISOString() : null,
       dishes,
-      note
+      note,
     };
     return JSON.stringify(order);
   };
 
   return (
-    <OrderContext.Provider value={{ tableNumber, setTableNumber, isOutside, setIsOutside, dateTime, setDateTime, dishes, setDishes, getOrderAsJson, note, setNote }}>
+    <OrderContext.Provider value={{ tableNumber, setTableNumber, waiter, setWaiter, isOutside, setIsOutside, dateTime, setDateTime, dishes, setDishes, getOrderAsJson, note, setNote }}>
       {children}
     </OrderContext.Provider>
   );
