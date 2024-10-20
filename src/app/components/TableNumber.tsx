@@ -9,7 +9,6 @@ export default function TableNumber() {
     const { setTableNumber, isOutside, setIsOutside } = useOrderContext();
     const [value, setValue] = useState<string | null>('');
 
-    console.log('isoutside antes do useeffect', isOutside)
     useEffect(() => {
         // Acessa o localStorage apenas no cliente
         const storagedTableNumber = localStorage.getItem('tableNumber');
