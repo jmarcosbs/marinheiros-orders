@@ -8,6 +8,7 @@ import { useOrderContext } from '../context/OrderContext';
 export default function TableNumber() {
     const { setTableNumber, isOutside, setIsOutside } = useOrderContext();
     const [value, setValue] = useState<string | null>('');
+    const [isLoaded, setIsLoaded] = useState(false); // Novo estado para verificar carregamento
 
     useEffect(() => {
         // Acessa o localStorage apenas no cliente
@@ -15,28 +16,30 @@ export default function TableNumber() {
         if (storagedTableNumber) {
             setValue(storagedTableNumber);
         }
+
+        // Busca o valor inicial de isOutside do localStorage e configura o estado
         const storagedIsOutside = localStorage.getItem('isOutside');
-        // Converte o valor para booleano, assumindo que "true" representa `true` e qualquer outra coisa representa `false`
         const isOutsideToBoolean = storagedIsOutside === 'true';
-        if (isOutsideToBoolean) {
-            setIsOutside(isOutsideToBoolean);
-            localStorage.setItem('isOutside', String(isOutside));
-        }
+        setIsOutside(isOutsideToBoolean);
+        setIsLoaded(true); // Define como carregado após o valor ser definido
     }, []);
 
     useEffect(() => {
-         // Acessa o localStorage apenas no cliente
-        localStorage.setItem('isOutside', String(isOutside));
-
-    }, [isOutside]);
+        if (isLoaded) {
+            localStorage.setItem('isOutside', String(isOutside));
+        }
+    }, [isOutside, isLoaded]);
 
     const handleTableNumberChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const newTableNumber = event.target.value;
         setValue(newTableNumber);
         setTableNumber(parseInt(newTableNumber));
-        localStorage.setItem('tableNumber', newTableNumber)
+        localStorage.setItem('tableNumber', newTableNumber);
     };
 
+    if (!isLoaded) {
+        return null; // Evita renderizar até estar carregado
+    }
 
     return (
         <div className="flex items-center justify-between">

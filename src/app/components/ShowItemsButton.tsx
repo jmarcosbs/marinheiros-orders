@@ -13,14 +13,14 @@ export default function ShowItemsButton() {
         <>
             <Button
                 variant='contained'
-                sx={{padding: "20px", width: "100%", backgroundColor: '#5c4227'}}
+                sx={{padding: "10px", width: "100%", backgroundColor: '#5c4227'}}
                 onClick={() => setShowItems(!showItems)} // Corrigido para alternar o estado
             >
                 {!showItems? 'Adicionar Item' : 'Esconder Items'}
             </Button>
 
             {showItems && ( // Condicional para mostrar os itens
-               <Items />
+                <Items />
             )}
         </>
     )

@@ -36,7 +36,6 @@ export default function Items() {
 
     setDishes((prevDishes: Dish[]) => { // Specify the type of prevDishes
       const updatedDishes = [...prevDishes, newDish];
-      console.log("Updated dishes:", updatedDishes); // Log para rastreamento
       return updatedDishes; // Return the updated array
     });
   };
@@ -48,10 +47,14 @@ export default function Items() {
         <div className={openIndex === index ? "col-span-2" : "col-span-1"} key={menuItem.category} id={`item-${index}`}>
           <List key={menuItem.category}>
             <ListItemButton 
-              sx={{ backgroundColor: '#7d654b', color: '#fff', borderRadius: '5px', boxShadow: '3px 3px 5px 0px #5c422730', '&:hover': { backgroundColor: '#5c4227' }}} 
+              sx={{
+                backgroundColor: menuItem.departiment === "copa" ? '#4d3720' : '#7d654b', // different color for "copa"
+                color: '#fff',
+                borderRadius: '5px',
+                boxShadow: '3px 3px 5px 0px #5c422730',
+                '&:hover': { backgroundColor: menuItem.departiment === "copa" ? '#362616' : '#5c4227' }}} 
               onClick={() => {
                 handleClickItem(index);
-                document.getElementById(`item-${index}`)?.scrollIntoView({ behavior: 'smooth' });
               }}
             >
               <ListItemText primary={menuItem.category} />

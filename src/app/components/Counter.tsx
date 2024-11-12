@@ -24,19 +24,19 @@ export default function Counter({ containerWidth, dishIndex, dishDepartiment }: 
 
     const incrementCount = () => {
 
-        setCount((prev) => (prev ? prev : 0) + (dishDepartiment == "Cozinha" ? 0.5 : 1));
+        setCount((prev) => (prev ? prev : 0) + (dishDepartiment == "cozinha" ? 0.5 : 1));
         setDishes((prevDishes: Dish[]) =>
             prevDishes.map((dish, index) =>
-                index === dishIndex ? { ...dish, amount: (dish.amount ?? 0) + (dishDepartiment == "Cozinha" ? 0.5 : 1) } : dish
+                index === dishIndex ? { ...dish, amount: (dish.amount ?? 0) + (dishDepartiment == "cozinha" ? 0.5 : 1) } : dish
             )
         );
     };
 
     const decrementCount = () => {
-        setCount((prev) => Math.max((prev ? prev : 0) - (dishDepartiment == "Cozinha" ? 0.5 : 1), 0.5));
+        setCount((prev) => Math.max((prev ? prev : 0) - (dishDepartiment == "cozinha" ? 0.5 : 1), 0.5));
         setDishes((prevDishes: Dish[]) =>
             prevDishes.map((dish, index) =>
-                index === dishIndex ? { ...dish, amount: Math.max((dish.amount ?? 0) - (dishDepartiment == "Cozinha" ? 0.5 : 1), 0) } : dish
+                index === dishIndex ? { ...dish, amount: Math.max((dish.amount ?? 0) - (dishDepartiment == "cozinha" ? 0.5 : 1), 0) } : dish
             )
         );
     };
@@ -54,7 +54,7 @@ export default function Counter({ containerWidth, dishIndex, dishDepartiment }: 
                 <Button
                     variant='contained'
                     onClick={decrementCount}
-                    disabled={dishDepartiment == "Cozinha" ? (count ? count : 0) <= 0.5 : (count ? count : 0) <= 1}
+                    disabled={dishDepartiment == "cozinha" ? (count ? count : 0) <= 0.5 : (count ? count : 0) <= 1}
                     sx={{ backgroundColor: '#5c422795', padding: '10px' }}
                 >
                     <Remove fontSize="small" />

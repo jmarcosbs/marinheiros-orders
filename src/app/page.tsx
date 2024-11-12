@@ -2,11 +2,13 @@ import TableNumber from '@/app/components/TableNumber';
 import ShowItemsButton from '@/app/components/ShowItemsButton'
 import OrderList from '@/app/components/OrderList'
 import Comment from '@/app/components/Comment'
-import SendOrder from '@/app/components/SendOrder'
+import SendOrderButton from '@/app/components/SendOrderButton'
 import { OrderProvider } from '../app/context/OrderContext';
 
 export default function Home() {
+
   return (
+    <>
       <div className='flex items-center w-screen justify-center'>
         
           <main>
@@ -16,13 +18,13 @@ export default function Home() {
                 <ShowItemsButton />
                 <OrderList />
                 <Comment/>
-                <SendOrder />
+                <SendOrderButton />
               </OrderProvider>
             </div>
           </main>
 
           <footer></footer>
         </div>
-
+    </>
   );
 }
