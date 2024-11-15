@@ -4,13 +4,13 @@
       "category": "🍲 Entradas",
       "departiment": "cozinha",
       "items": [
-        { "id": 1, "departiment": "cozinha", "name": "Camarao a Milanesa" },
-        { "id": 2, "departiment": "cozinha", "name": "Camarao ao Alho e Oleo (sem casca)" },
-        { "id": 3, "departiment": "cozinha", "name": "Lula a Milanesa" },
-        { "id": 4, "departiment": "cozinha", "name": "Torpedo de Siri (2 unidades)" },
+        { "id": 1, "departiment": "cozinha", "name": "Camarao a Milanesa AP" },
+        { "id": 2, "departiment": "cozinha", "name": "Camarao ao Alho e Oleo" },
+        { "id": 3, "departiment": "cozinha", "name": "Lula a Milanesa AP" },
+        { "id": 4, "departiment": "cozinha", "name": "Torpedo de Siri" },
         { "id": 5, "departiment": "cozinha", "name": "Isca de Frango" },
         { "id": 6, "departiment": "cozinha", "name": "Isca de Peixe" },
-        { "id": 7, "departiment": "cozinha", "name": "Peixe frito em postas" },
+        { "id": 7, "departiment": "cozinha", "name": "Peixe em postas" },
         { "id": 8, "departiment": "cozinha", "name": "Aipim Frito" },
         { "id": 9, "departiment": "cozinha", "name": "Batata Frita" }
       ]
@@ -34,13 +34,13 @@
         {
           "id": 12,
           "departiment": "cozinha",
-          "name": "Camarao a Milanesa",
+          "name": "Camarao a Milanesa Comp.",
           "description": "Camarao a milanesa tradicional. Acompanhamentos: Arroz, fritas e salada."
         },
         {
           "id": 13,
           "departiment": "cozinha",
-          "name": "Camarao a Moda Marinheiro's",
+          "name": "Camarao a Moda",
           "description": "Camarao refogado com cebola, tomate, salsinha, azeitonas e creme de leite. Acompanhamentos: Arroz, fritas e salada."
         },
         {
@@ -48,6 +48,12 @@
           "departiment": "cozinha",
           "name": "Strogonoff de Camarao",
           "description": "Camarao servido em molho de creme de leite. Acompanhamentos: Arroz, fritas e salada."
+        },
+        {
+          "id": 31,
+          "departiment": "cozinha",
+          "name": "Camarão Praia Brava",
+          "description": "Sem descrição"
         }
       ]
     },
@@ -58,7 +64,7 @@
         {
           "id": 15,
           "departiment": "cozinha",
-          "name": "Lula a Milanesa",
+          "name": "Lula a Milanesa Comp.",
           "description": "Lula a milanesa tradicional. Acompanhamentos: Arroz, fritas e salada."
         }
       ]
@@ -70,7 +76,7 @@
         {
           "id": 16,
           "departiment": "cozinha",
-          "name": "Cacarola de Frutos do Mar",
+          "name": "Cacarola F. Mar",
           "description": "Frutos do mar ao molho de tomate com cebola, azeite de dende e leite de coco. Acompanhamentos: Arroz, fritas e pirão."
         },
         {
@@ -94,19 +100,25 @@
         {
           "id": 19,
           "departiment": "cozinha",
-          "name": "Anchova Grelhada ou em Postas",
+          "name": "Anchova Grelhada",
+          "description": "Anchova grelhada na chapa. Acompanhamentos: Arroz, batata sauté e pirão."
+        },
+        {
+          "id": 32,
+          "departiment": "cozinha",
+          "name": "Anchova em Posta Comp.",
           "description": "Anchova grelhada na chapa. Acompanhamentos: Arroz, batata sauté e pirão."
         },
         {
           "id": 20,
           "departiment": "cozinha",
-          "name": "Anchova ao Molho de Alcaparras",
+          "name": "Anchova Alcaparras",
           "description": "Anchova grelhada na chapa ao molho de alcaparras. Acompanhamentos: Arroz, batata sauté e pirão."
         },
         {
           "id": 21,
           "departiment": "cozinha",
-          "name": "Anchova à Belle Meunière",
+          "name": "Anchova Belle Meuniere",
           "description": "Anchova grelhada com alcaparras, champignon e camarão. Acompanhamentos: Arroz, batata sauté e pirão."
         }
       ]
@@ -124,13 +136,19 @@
         {
           "id": 23,
           "departiment": "cozinha",
-          "name": "Salmao ao Molho de Alcaparras",
+          "name": "Salmao Alcaparras",
           "description": "File de Salmao grelhado na chapa ao molho de alcaparras. Acompanhamentos: Arroz, batata sauté e pirão."
         },
         {
           "id": 24,
           "departiment": "cozinha",
-          "name": "Salmao à Belle Meunière",
+          "name": "Salmao Belle Meunière",
+          "description": "Salmao grelhado com alcaparras, champignon e camarão. Acompanhamentos: Arroz, batata sauté e pirão."
+        },
+        {
+          "id": 33,
+          "departiment": "cozinha",
+          "name": "Salmao Molho de Laranja",
           "description": "Salmao grelhado com alcaparras, champignon e camarão. Acompanhamentos: Arroz, batata sauté e pirão."
         }
       ]
@@ -142,32 +160,104 @@
         {
           "id": 25,
           "departiment": "cozinha",
-          "name": "Congrio Rosa Grelhado",
+          "name": "Congrio Grelhado",
           "description": "File de Congrio grelhado na chapa. Acompanhamentos: Arroz, batata sauté e pirão."
         },
         {
           "id": 26,
           "departiment": "cozinha",
-          "name": "Congrio Rosa ao Molho de Alcaparras",
+          "name": "Congrio Alcaparras",
           "description": "File de Congrio grelhado ao molho de alcaparras. Acompanhamentos: Arroz, batata sauté e pirão."
         },
         {
           "id": 27,
           "departiment": "cozinha",
-          "name": "Congrio Rosa à Belle Meunière",
+          "name": "Congrio Belle Meunière",
           "description": "Congrio grelhado com alcaparras, champignon e camarão. Acompanhamentos: Arroz, batata sauté e pirão."
         },
         {
           "id": 28,
           "departiment": "cozinha",
-          "name": "Congrio Rosa ao Molho de Camarao",
+          "name": "Congrio Molho de Camarao",
           "description": "Congrio a milanesa com molho de camarao. Acompanhamentos: Arroz, fritas e salada."
         },
         {
           "id": 29,
           "departiment": "cozinha",
-          "name": "Congrio Rosa à Moda Marinheiro's",
+          "name": "Congrio à Moda",
           "description": "Congrio com molho de cebola, tomate, salsinha, azeitonas e creme de leite. Acompanhamentos: Arroz, fritas e salada."
+        }
+      ]
+    },
+    {
+      "category": "🐟 Linguado",
+      "departiment": "cozinha",
+      "items": [
+        {
+          "id": 34,
+          "departiment": "cozinha",
+          "name": "Linguado Grelhado",
+          "description": "File de Linguado grelhado na chapa. Acompanhamentos: Arroz, batata sauté e pirão."
+        },
+        {
+          "id": 35,
+          "departiment": "cozinha",
+          "name": "Linguado Alcaparras",
+          "description": "File de Linguado grelhado ao molho de alcaparras. Acompanhamentos: Arroz, batata sauté e pirão."
+        },
+        {
+          "id": 36,
+          "departiment": "cozinha",
+          "name": "Linguado Belle Meunière",
+          "description": "Linguado grelhado com alcaparras, champignon e camarão. Acompanhamentos: Arroz, batata sauté e pirão."
+        },
+        {
+          "id": 37,
+          "departiment": "cozinha",
+          "name": "Linguado Molho de Camarao",
+          "description": "Linguado a milanesa com molho de camarao. Acompanhamentos: Arroz, fritas e salada."
+        },
+        {
+          "id": 38,
+          "departiment": "cozinha",
+          "name": "Linguado à Moda",
+          "description": "Congrio com molho de cebola, tomate, salsinha, azeitonas e creme de leite. Acompanhamentos: Arroz, fritas e salada."
+        }
+      ]
+    },
+    {
+      "category": "🐟 File de Peixe",
+      "departiment": "cozinha",
+      "items": [
+        {
+          "id": 39,
+          "departiment": "cozinha",
+          "name": "Peixe Grelhado",
+          "description": "File de Peixe grelhado na chapa. Acompanhamentos: Arroz, batata sauté e pirão."
+        },
+        {
+          "id": 40,
+          "departiment": "cozinha",
+          "name": "Peixe Alcaparras",
+          "description": "File de Peixe grelhado ao molho de alcaparras. Acompanhamentos: Arroz, batata sauté e pirão."
+        },
+        {
+          "id": 41,
+          "departiment": "cozinha",
+          "name": "Peixe Milanesa",
+          "description": "Peixe grelhado com alcaparras, champignon e camarão. Acompanhamentos: Arroz, batata sauté e pirão."
+        },
+        {
+          "id": 42,
+          "departiment": "cozinha",
+          "name": "Peixe Molho de Camarao",
+          "description": "Peixe a milanesa com molho de camarao. Acompanhamentos: Arroz, fritas e salada."
+        },
+        {
+          "id": 43,
+          "departiment": "cozinha",
+          "name": "Peixe à Moda",
+          "description": "Peixe com molho de cebola, tomate, salsinha, azeitonas e creme de leite. Acompanhamentos: Arroz, fritas e salada."
         }
       ]
     },
@@ -176,22 +266,64 @@
       "departiment": "cozinha",
       "items": [
         {
-          "id": 30,
+          "id": 44,
           "departiment": "cozinha",
-          "name": "File Mignon Grelhado",
+          "name": "File Grelhado",
           "description": "File Mignon grelhado na chapa. Acompanhamentos: Arroz, fritas e salada."
         },
         {
-          "id": 31,
+          "id": 45,
           "departiment": "cozinha",
-          "name": "File Mignon à Milanesa",
+          "name": "File Molho Madeira",
           "description": "File Mignon a milanesa. Acompanhamentos: Arroz, fritas e salada."
         },
         {
-          "id": 32,
+          "id": 46,
           "departiment": "cozinha",
-          "name": "File Mignon à Parmegiana",
+          "name": "File Acebolado",
+          "description": "File Mignon a milanesa. Acompanhamentos: Arroz, fritas e salada."
+        },
+        {
+          "id": 47,
+          "departiment": "cozinha",
+          "name": "File à Parmegiana",
           "description": "File Mignon a milanesa com molho de tomate e queijo gratinado. Acompanhamentos: Arroz, fritas e salada."
+        },
+        {
+          "id": 48,
+          "departiment": "cozinha",
+          "name": "Strogonoff de Carne",
+          "description": "File Mignon a milanesa com molho de tomate e queijo gratinado. Acompanhamentos: Arroz, fritas e salada."
+        }
+      ]
+    },
+    {
+      "category": "🐔 Frango",
+      "departiment": "cozinha",
+      "items": [
+        {
+          "id": 49,
+          "departiment": "cozinha",
+          "name": "Frango Grelhado",
+          "description": "Frango Mignon grelhado na chapa. Acompanhamentos: Arroz, fritas e salada."
+        },
+        {
+          "id": 50,
+          "departiment": "cozinha",
+          "name": "Frango Milanesa",
+          "description": "Frango Mignon a milanesa. Acompanhamentos: Arroz, fritas e salada."
+        },
+        {
+          "id": 51,
+          "departiment": "cozinha",
+          "name": "Frango a Romana",
+          "description": "Frango Mignon a milanesa. Acompanhamentos: Arroz, fritas e salada."
+        },
+        {
+          "id": 52,
+          "departiment": "cozinha",
+          "name": "Frango à Parmegiana",
+          "description": "Frango Mignon a milanesa com molho de tomate e queijo gratinado. Acompanhamentos: Arroz, fritas e salada."
         }
       ]
     },
@@ -202,7 +334,7 @@
         {
           "id": 30,
           "departiment": "copa",
-          "name": "Morango",
+          "name": "Abacaxi",
           "description": ""
         },
         {
@@ -214,7 +346,25 @@
         {
           "id": 30,
           "departiment": "copa",
-          "name": "Abacaxi",
+          "name": "Laranja",
+          "description": ""
+        },
+        {
+          "id": 30,
+          "departiment": "copa",
+          "name": "Limao",
+          "description": ""
+        },
+        {
+          "id": 30,
+          "departiment": "copa",
+          "name": "Maracuja",
+          "description": ""
+        },
+        {
+          "id": 30,
+          "departiment": "copa",
+          "name": "Morango",
           "description": ""
         }
       ]
@@ -230,15 +380,153 @@
           "description": ""
         },
         {
-          "id": 30,
+          "id": 31,
+          "departiment": "copa",
+          "name": "Coca Zero",
+          "description": ""
+        },
+        {
+          "id": 32,
+          "departiment": "copa",
+          "name": "Guaraná",
+          "description": ""
+        },
+        {
+          "id": 33,
+          "departiment": "copa",
+          "name": "Guaraná Zero",
+          "description": ""
+        },
+        {
+          "id": 34,
+          "departiment": "copa",
+          "name": "Fanta Uva",
+          "description": ""
+        },
+        {
+          "id": 35,
+          "departiment": "copa",
+          "name": "Fanta Laranja",
+          "description": ""
+        },
+        {
+          "id": 36,
           "departiment": "copa",
           "name": "Sprite",
           "description": ""
         },
         {
-          "id": 30,
+          "id": 37,
           "departiment": "copa",
-          "name": "Guaraná",
+          "name": "Tônica",
+          "description": ""
+        },
+        {
+          "id": 38,
+          "departiment": "copa",
+          "name": "H2O",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "category": "💧 Água",
+      "departiment": "copa",
+      "items": [
+        {
+          "id": 70,
+          "departiment": "copa",
+          "name": "Água com Gás",
+          "description": ""
+        },
+        {
+          "id": 71,
+          "departiment": "copa",
+          "name": "Água sem Gás",
+          "description": ""
+        }
+      ]
+    },    
+    {
+      "category": "🍺 Cervejas",
+      "departiment": "copa",
+      "items": [
+        {
+          "id": 40,
+          "departiment": "copa",
+          "name": "Original",
+          "description": ""
+        },
+        {
+          "id": 41,
+          "departiment": "copa",
+          "name": "Heineken",
+          "description": ""
+        },
+        {
+          "id": 42,
+          "departiment": "copa",
+          "name": "Serra Malte",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "category": "🍻 Longneck",
+      "departiment": "copa",
+      "items": [
+        {
+          "id": 60,
+          "departiment": "copa",
+          "name": "Longneck Heineken",
+          "description": ""
+        },
+        {
+          "id": 61,
+          "departiment": "copa",
+          "name": "Longneck Malzbier",
+          "description": ""
+        }
+      ]
+    },    
+    {
+      "category": "🍹 Caipirinhas",
+      "departiment": "copa",
+      "items": [
+        {
+          "id": 50,
+          "departiment": "copa",
+          "name": "Vodka",
+          "description": ""
+        },
+        {
+          "id": 51,
+          "departiment": "copa",
+          "name": "Cachaça",
+          "description": ""
+        },
+        {
+          "id": 52,
+          "departiment": "copa",
+          "name": "Steinhaeger",
+          "description": ""
+        },
+        {
+          "id": 53,
+          "departiment": "copa",
+          "name": "Absolut",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "category": "🍦 Picolés",
+      "departiment": "copa",
+      "items": [
+        {
+          "id": 53,
+          "departiment": "copa",
+          "name": "Picolé Ypy",
           "description": ""
         }
       ]
