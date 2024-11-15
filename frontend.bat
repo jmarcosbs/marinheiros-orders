@@ -1,3 +1,2 @@
 @echo off
-cd %~dp0marinheiros-orders
-next run start
+npx next start -H 0.0.0.0 -p 3000

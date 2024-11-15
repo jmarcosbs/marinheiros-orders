@@ -12,6 +12,10 @@ export default function SendOrderButton() {
     const [openBackdrop, setOpenBackdrop] = useState(false);
     const [errorMessage, setErrorMessage] = useState<string>('');
 
+    const apiUrl = process.env.NEXT_PUBLIC_LOCAL_API_URL
+    const fullUrl = `${apiUrl}/api/orders/`;    
+    console.log("Full url API", apiUrl)
+
     const handleSubmit = async () => {
         let errors = '';
 
@@ -50,7 +54,7 @@ export default function SendOrderButton() {
         const orderData = getOrderAsJson();
     
         try {
-            const response = await fetch('http://192.168.0.21:8000/api/orders/', {
+            const response = await fetch(fullUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
