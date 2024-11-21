@@ -3,6 +3,7 @@
     {
       "category": "🍲 Entradas",
       "departiment": "cozinha",
+      "color": "#BEADFA", 
       "items": [
         { "id": 1, "departiment": "cozinha", "name": "Camarao a Milanesa AP" },
         { "id": 2, "departiment": "cozinha", "name": "Camarao ao Alho e Oleo" },
@@ -18,6 +19,7 @@
     {
       "category": "🍤 Camaroes",
       "departiment": "cozinha",
+      "color": "#F9B572", 
       "items": [
         {
           "id": 10,
@@ -60,6 +62,7 @@
     {
       "category": "🍥 Lulas",
       "departiment": "cozinha",
+      "color": "#E6A4B4", 
       "items": [
         {
           "id": 15,
@@ -70,8 +73,9 @@
       ]
     },
     {
-      "category": "🍵 Cacarolas e Moquecas",
+      "category": "🍵 Moquecas",
       "departiment": "cozinha",
+      "color": "#B0A695", 
       "items": [
         {
           "id": 16,
@@ -96,6 +100,7 @@
     {
       "category": "🐟 Anchovas",
       "departiment": "cozinha",
+      "color": "#007fff", 
       "items": [
         {
           "id": 19,
@@ -126,6 +131,7 @@
     {
       "category": "🐟 Salmoes",
       "departiment": "cozinha",
+      "color": "#007fff", 
       "items": [
         {
           "id": 22,
@@ -156,6 +162,7 @@
     {
       "category": "🐟 Congrio Rosa",
       "departiment": "cozinha",
+      "color": "#007fff", 
       "items": [
         {
           "id": 25,
@@ -192,6 +199,7 @@
     {
       "category": "🐟 Linguado",
       "departiment": "cozinha",
+      "color": "#007fff", 
       "items": [
         {
           "id": 34,
@@ -228,6 +236,7 @@
     {
       "category": "🐟 File de Peixe",
       "departiment": "cozinha",
+      "color": "#007fff", 
       "items": [
         {
           "id": 39,
@@ -264,6 +273,7 @@
     {
       "category": "🍖 Carnes",
       "departiment": "cozinha",
+      "color": "#C96868", 
       "items": [
         {
           "id": 44,
@@ -300,6 +310,7 @@
     {
       "category": "🐔 Frango",
       "departiment": "cozinha",
+      "color": "#FFB26F", 
       "items": [
         {
           "id": 49,
@@ -330,6 +341,7 @@
     {
       "category": "🥃 Sucos",
       "departiment": "copa",
+      "color": "#8E7AB5", 
       "items": [
         {
           "id": 30,
@@ -372,6 +384,7 @@
     {
       "category": "🥤 Refrigerantes",
       "departiment": "copa",
+      "color": "#bf2c2a", 
       "items": [
         {
           "id": 30,
@@ -432,6 +445,7 @@
     {
       "category": "💧 Água",
       "departiment": "copa",
+      "color": "#48d1cc", 
       "items": [
         {
           "id": 70,
@@ -450,6 +464,7 @@
     {
       "category": "🍺 Cervejas",
       "departiment": "copa",
+      "color": "#F6F193", 
       "items": [
         {
           "id": 40,
@@ -474,6 +489,7 @@
     {
       "category": "🍻 Longneck",
       "departiment": "copa",
+      "color": "#F6F193", 
       "items": [
         {
           "id": 60,
@@ -492,6 +508,7 @@
     {
       "category": "🍹 Caipirinhas",
       "departiment": "copa",
+      "color": "#64b514", 
       "items": [
         {
           "id": 50,
@@ -522,6 +539,7 @@
     {
       "category": "🍦 Picolés",
       "departiment": "copa",
+      "color": "#d7bab4", 
       "items": [
         {
           "id": 53,

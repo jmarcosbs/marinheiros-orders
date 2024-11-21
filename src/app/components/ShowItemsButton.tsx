@@ -7,7 +7,7 @@ import Items from './Items'
 
 export default function ShowItemsButton() {
 
-    const [showItems, setShowItems] = useState(false)
+    const [showItems, setShowItems] = useState(true)
 
     return (
         <>
