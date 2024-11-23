@@ -57,6 +57,7 @@ export default function Items() {
               </ListItemButton>
             </ListItem>
           ))}
+          <CustomItem />
         </div>
       </List>
       
