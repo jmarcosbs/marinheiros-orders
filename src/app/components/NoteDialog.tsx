@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Dialog, List, ListItem, ListItemButton, ListItemText, DialogTitle } from '@mui/material'
 import { useOrderContext, Dish } from '../context/OrderContext';
+import CommentOrderDialog from './CommentOrderDialog';
 
 interface Item {
     id: number;
@@ -19,13 +20,17 @@ interface NoteDialogProps {
 
 export default function NoteDialog( props : NoteDialogProps ) {
 
-    const { setDishes } = useOrderContext()
+    const { dishes, setDishes } = useOrderContext()
+    const [openComment, setOpenComment] = useState(false) // Controle do estado do diálogo
+    const [ dishIndex, setDishIndex ] = useState<number>(0)
+    const [selectedSubItem, setSelectedSubItem] = useState<Item | null>(null);
 
-    const handleClickSubItem = (item: Item, departiment: string) => {
+
+    const handleClickSubItem = (item : Item) => {
         const newDish: Dish = {
             id: item.id,
             name: item.name,
-            departiment: departiment, // Usa o departamento passado como argumento
+            departiment: item.departiment, // Usa o departamento passado como argumento
             amount: 1, // Substitua pelo valor correto
             note: null // Inicializa note como null
         }
@@ -34,15 +39,25 @@ export default function NoteDialog( props : NoteDialogProps ) {
             const updatedDishes = [...prevDishes, newDish];
             return updatedDishes; // Return the updated array
         })
+
+        setDishIndex(dishes.length)
+        setOpenComment(true)
+        props.onClose()
+    }
+
+    const handleCloseComment = () => {
+
+        setOpenComment(false)
+
     }
 
     return (
-
+        <>
             <Dialog open={props.openDialog} onClose={props.onClose}>
                 <List>
-                {props.menuSubItems.map((subItem: Item) => (
-                    <ListItem key={subItem.id} disablePadding>
-                    <ListItemButton onClick={() => handleClickSubItem(subItem, subItem.departiment)}>
+                {props.menuSubItems.map((subItem: Item, index) => (
+                    <ListItem key={index} disablePadding>
+                    <ListItemButton onClick={() => handleClickSubItem(subItem)}>
                         <ListItemText primary={subItem.name} />
                     </ListItemButton>
                     </ListItem>
@@ -50,5 +65,7 @@ export default function NoteDialog( props : NoteDialogProps ) {
                 </List>
             </Dialog>
 
+            <CommentOrderDialog dishIndex={dishIndex} openDialog={openComment} onClose={handleCloseComment}/>
+        </>
     )
 }
