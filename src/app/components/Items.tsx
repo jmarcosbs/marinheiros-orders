@@ -4,6 +4,7 @@ import { ListItemText, ListItemButton, Dialog, DialogTitle, List, ListItem, Butt
 import { useOrderContext, Dish } from '../context/OrderContext';
 import CustomItem from '../components/CustomItem'
 import NoteDialog from "./NoteDialog";
+import CommentOrderDialog from "./CommentOrderDialog";
 
 export default function Items() {
   const { setDishes } = useOrderContext();
@@ -31,23 +32,6 @@ export default function Items() {
 
   const handleClose = () => {
     setOpenDialog(false);
-  };
-
-  const handleClickSubItem = (item: Item, departiment: string) => {
-    const newDish: Dish = {
-      id: item.id,
-      name: item.name,
-      departiment: departiment, // Usa o departamento passado como argumento
-      amount: 1, // Substitua pelo valor correto
-      note: null // Inicializa note como null
-    };
-
-    setDishes((prevDishes: Dish[]) => { // Specify the type of prevDishes
-      const updatedDishes = [...prevDishes, newDish];
-      return updatedDishes; // Return the updated array
-    });
-
-    setOpenDialog(false)
   };
 
   const menuItem : MenuItem [] = menuItems["menu"]
