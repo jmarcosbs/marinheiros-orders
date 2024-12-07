@@ -96,7 +96,7 @@ export default function CommentOrderDialog(props: CommentOrderProps) {
                 </DialogContentText>
 
                 <TextField
-                    autoFocus
+                    autoFocus={false}
                     required
                     margin="dense"
                     id="note"
