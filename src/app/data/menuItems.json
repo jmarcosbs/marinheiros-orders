@@ -403,8 +403,7 @@
       "category": "🥃 Sucos",
       "departiment": "copa",
       "options": [
-
-        ["Pouco açucar", "Bem docinho"],
+        ["Sem açucar", "Pouco açucar", "Bem docinho"],
         ["Pouco gelo", "Sem gelo"]
 
       ],
@@ -565,7 +564,9 @@
     {
       "category": "🍻 Longneck",
       "departiment": "copa",
-      "options": [],
+      "options": [
+        ["1 copo", "2 copos", "3 copos", "4 copos", "5 copos", "6 copos"]
+      ],
       "color": "#F6F193", 
       "items": [
         {
@@ -586,7 +587,8 @@
       "category": "🍹 Caipirinhas",
       "departiment": "copa",
       "options": [
-        ["Pouco açucar", "Bem docinho"],
+        ["🍓 Morango", "🟠 Maracujá", "🍍 Abacaxi", "🍅 Acerola", "Mista"],
+        ["Sem açucar", "Pouco açucar", "Bem docinho"],
         ["Pouco gelo", "Sem gelo"]
       ],
       "color": "#64b514", 
