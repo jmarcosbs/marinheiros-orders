@@ -1,5 +1,5 @@
 import "./globals.css";
-
+import Head from 'next/head';
 import type { Metadata, Viewport } from "next";
 
 const APP_NAME = "Marinheiros Pedidos";
@@ -54,6 +54,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
+      <Head>
+        <meta name="mobile-web-app-capable" content="yes"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="apple-mobile-web-app-status-bar-style"
+            content="black-translucent"/>
+        <meta name="viewport"
+content="width=device-width; initial-scale=1; viewport-fit=cover"/>
+      </Head>
       <body
         // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
