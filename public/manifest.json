@@ -453,7 +453,7 @@
   ],
 	"theme_color": "#3f2008",
 	"background_color": "#3f2008",
-	"start_url": "/?fullscreen=true",
-	"display": "fullscreen",
+	"display": "standalone",
+  "start_url": "/?standalone=true",
 	"orientation": "portrait"
   }
