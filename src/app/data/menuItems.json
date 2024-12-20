@@ -586,7 +586,7 @@
     {
       "category": "🍹 Caipirinhas",
       "departiment": "copa",
-      "options": [
+    "options": [
         ["🍓 Morango", "🟠 Maracujá", "🍍 Abacaxi", "🍅 Acerola", "Mista"],
         ["Sem açucar", "Pouco açucar", "Bem docinho"],
         ["Pouco gelo", "Sem gelo"]
