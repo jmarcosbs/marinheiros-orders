@@ -8,6 +8,7 @@ interface Item {
     name: string;
     departiment: string;
     description?: string; // Agora é opcional
+    category: string;
 }
 
 interface NoteDialogProps {
@@ -32,20 +33,27 @@ export default function NoteDialog( props : NoteDialogProps ) {
             name: item.name,
             departiment: item.departiment, // Usa o departamento passado como argumento
             amount: 1, // Substitua pelo valor correto
-            note: null // Inicializa note como null
+            note: null, // Inicializa note como null
+            category: item.category, // Inicializa category como null
         }
     
         setDishes((prevDishes: Dish[]) => { // Specify the type of prevDishes
             let updatedDishes = [...prevDishes, newDish];
-            updatedDishes = updatedDishes.sort((a, b) => (a.departiment === 'cozinha' ? -1 : 1));
+        updatedDishes = updatedDishes.sort((a, b) => {
+        if (a.category === '🍲 Entradas' && b.category !== '🍲 Entradas') return -1;
+        if (a.category !== '🍲 Entradas' && b.category === '🍲 Entradas') return 1;
+        if (a.departiment === 'cozinha' && b.departiment !== 'cozinha') return -1;
+        if (a.departiment !== 'cozinha' && b.departiment === 'cozinha') return 1;
+        return 0;
+    });
 
-            // Encontre o índice do newDish após a ordenação
-            const newDishIndex = updatedDishes.findIndex(dish => dish.id === newDish.id && dish.departiment === newDish.departiment);
-            
-            // Atualize o estado dishIndex para o índice do novo prato
-            setDishIndex(newDishIndex);
+    // Encontre o índice do newDish após a ordenação
+    const newDishIndex = updatedDishes.findIndex(dish => dish.id === newDish.id && dish.departiment === newDish.departiment);
 
-            return updatedDishes;
+    // Atualize o estado dishIndex para o índice do novo prato
+    setDishIndex(newDishIndex);
+
+    return updatedDishes;
         });
 
         setOpenComment(true)

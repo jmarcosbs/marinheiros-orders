@@ -7,6 +7,7 @@ export type Dish = {
   departiment: string | null;
   amount: number | null;
   note: string | null;
+  category: string | null;
 };
 
 interface OrderContextProps {
@@ -21,6 +22,19 @@ interface OrderContextProps {
   note: string;
   setNote: (note: string) => void;
   getOrderAsJson: () => string;
+}
+
+interface GroupedDishesAcc {
+  [key: string]: {
+      dish: {
+          id: number;
+          department: string | null;
+          dish_name: string | null;
+      };
+      amount: number | null;
+      dish_note: string | null;
+      category: string | null;
+  };
 }
 
 const OrderContext = createContext<OrderContextProps | undefined>(undefined);
@@ -77,25 +91,37 @@ export const OrderProvider: React.FC<{ children: React.ReactNode }> = ({ childre
             dish_name: dish.name
         },
         amount: dish.amount,
-        dish_note: dish.note
+        dish_note: dish.note,
+        category: dish.category // temporary category for sorting
     }));
 
     //Agrupa os pratos iguais
-    const groupedDishes = order_dishes.reduce((acc, current) => {
+    const groupedDishes = order_dishes.reduce<GroupedDishesAcc>((acc, current) => {
       const key = current.dish.id + (current.dish_note || '');
       if (!acc[key]) {
-        acc[key] = { ...current };
+          acc[key] = { ...current };
       } else {
-        acc[key].amount += current.amount;
+          acc[key].amount = (acc[key].amount ?? 0) + (current.amount ?? 0);
       }
       return acc;
-    }, {});
+  }, {});
 
     const groupedOrderDishes = Object.values(groupedDishes);
     const sortedGroupedOrderDishes = groupedOrderDishes.sort((a, b) => {
-    if (a.dish.department === 'cozinha' && b.dish.department !== 'cozinha') return -1;
-    if (a.dish.department !== 'cozinha' && b.dish.department === 'cozinha') return 1;
-    return a.dish.dish_name.localeCompare(b.dish.dish_name);
+      // First priority: Entradas
+      if (a.category === '🍲 Entradas' && b.category !== '🍲 Entradas') return -1;
+      if (a.category !== '🍲 Entradas' && b.category === '🍲 Entradas') return 1;
+      
+      // Second priority: department order (cozinha -> copa)
+      if (a.dish.department === 'cozinha' && b.dish.department === 'copa') return -1;
+      if (a.dish.department === 'copa' && b.dish.department === 'cozinha') return 1;
+      
+      return 0;
+    });
+
+  const groupedWithOutCategory = sortedGroupedOrderDishes.map(dish => {
+    const { category, ...dishWithoutCategory } = dish;
+    return dishWithoutCategory;
   });
 
     const order = {
@@ -103,7 +129,7 @@ export const OrderProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         waiter: waiter,
         is_outside: isOutside,
         order_note: note,
-        order_dishes: sortedGroupedOrderDishes
+        order_dishes: groupedWithOutCategory
     };
 
     console.log(order);
