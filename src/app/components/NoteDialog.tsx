@@ -40,12 +40,20 @@ export default function NoteDialog( props : NoteDialogProps ) {
         setDishes((prevDishes: Dish[]) => { // Specify the type of prevDishes
             let updatedDishes = [...prevDishes, newDish];
         updatedDishes = updatedDishes.sort((a, b) => {
-        if (a.category === '🍲 Entradas' && b.category !== '🍲 Entradas') return -1;
-        if (a.category !== '🍲 Entradas' && b.category === '🍲 Entradas') return 1;
-        if (a.departiment === 'cozinha' && b.departiment !== 'cozinha') return -1;
-        if (a.departiment !== 'cozinha' && b.departiment === 'cozinha') return 1;
-        return 0;
-    });
+            // First priority: Entradas
+            if (a.category === '🍲 Entradas' && b.category !== '🍲 Entradas') return -1;
+            if (a.category !== '🍲 Entradas' && b.category === '🍲 Entradas') return 1;
+            
+            // Second priority: department order (cozinha -> copa)
+            if (a.departiment === 'cozinha' && b.departiment === 'copa') return -1;
+            if (a.departiment === 'copa' && b.departiment === 'cozinha') return 1;
+            // Third priority: group by dish name within same category/department
+            if (a.name && b.name) {
+            return a.name.localeCompare(b.name);
+            }
+            
+            return 0;
+        });
 
     // Encontre o índice do newDish após a ordenação
     const newDishIndex = updatedDishes.findIndex(dish => dish.id === newDish.id && dish.departiment === newDish.departiment);

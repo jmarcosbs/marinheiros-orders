@@ -115,6 +115,11 @@ export const OrderProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       // Second priority: department order (cozinha -> copa)
       if (a.dish.department === 'cozinha' && b.dish.department === 'copa') return -1;
       if (a.dish.department === 'copa' && b.dish.department === 'cozinha') return 1;
+
+      // Third priority: group by dish name within same category/department
+      if (a.dish.dish_name && b.dish.dish_name) {
+      return a.dish.dish_name.localeCompare(b.dish.dish_name);
+      }
       
       return 0;
     });
