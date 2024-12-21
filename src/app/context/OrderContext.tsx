@@ -80,14 +80,33 @@ export const OrderProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         dish_note: dish.note
     }));
 
+    //Agrupa os pratos iguais
+    const groupedDishes = order_dishes.reduce((acc, current) => {
+      const key = current.dish.id + (current.dish_note || '');
+      if (!acc[key]) {
+        acc[key] = { ...current };
+      } else {
+        acc[key].amount += current.amount;
+      }
+      return acc;
+    }, {});
+
+    const groupedOrderDishes = Object.values(groupedDishes);
+    const sortedGroupedOrderDishes = groupedOrderDishes.sort((a, b) => {
+    if (a.dish.department === 'cozinha' && b.dish.department !== 'cozinha') return -1;
+    if (a.dish.department !== 'cozinha' && b.dish.department === 'cozinha') return 1;
+    return a.dish.dish_name.localeCompare(b.dish.dish_name);
+  });
+
     const order = {
         table_number: tableNumber,
         waiter: waiter,
         is_outside: isOutside,
         order_note: note,
-        order_dishes
+        order_dishes: sortedGroupedOrderDishes
     };
 
+    console.log(order);
     return JSON.stringify(order);
 };
 

@@ -36,11 +36,18 @@ export default function NoteDialog( props : NoteDialogProps ) {
         }
     
         setDishes((prevDishes: Dish[]) => { // Specify the type of prevDishes
-            const updatedDishes = [...prevDishes, newDish];
-            return updatedDishes; // Return the updated array
-        })
+            let updatedDishes = [...prevDishes, newDish];
+            updatedDishes = updatedDishes.sort((a, b) => (a.departiment === 'cozinha' ? -1 : 1));
 
-        setDishIndex(dishes.length)
+            // Encontre o índice do newDish após a ordenação
+            const newDishIndex = updatedDishes.findIndex(dish => dish.id === newDish.id && dish.departiment === newDish.departiment);
+            
+            // Atualize o estado dishIndex para o índice do novo prato
+            setDishIndex(newDishIndex);
+
+            return updatedDishes;
+        });
+
         setOpenComment(true)
         props.onClose()
     }
